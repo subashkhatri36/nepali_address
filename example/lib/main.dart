@@ -1,5 +1,5 @@
+import 'package:example/src/ui/address_component.dart';
 import 'package:flutter/material.dart';
-import 'package:nepali_address/nepali_address.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
