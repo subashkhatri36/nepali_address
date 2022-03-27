@@ -1,6 +1,8 @@
 import 'dart:convert';
 
-class Municipality {
+import 'package:example/src/models/base_model.dart';
+
+class Municipality extends BaseModel {
   final int id;
   final String name;
   final String nepali;
@@ -8,7 +10,7 @@ class Municipality {
     required this.id,
     required this.name,
     required this.nepali,
-  });
+  }) : super('');
 
   Map<String, dynamic> toMap() {
     return {

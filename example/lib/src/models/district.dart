@@ -1,9 +1,10 @@
 import 'dart:convert';
 
+import 'package:example/src/models/base_model.dart';
 import 'package:example/src/models/municipality.dart';
 import 'package:flutter/foundation.dart';
 
-class District {
+class District extends BaseModel {
   final String name;
   final String nepali;
   final int id;
@@ -13,7 +14,7 @@ class District {
     required this.nepali,
     required this.id,
     required this.municipalities,
-  });
+  }) : super('');
 
   District copyWith({
     String? name,
@@ -43,13 +44,15 @@ class District {
       name: map['name'] ?? '',
       nepali: map['nepali'] ?? '',
       id: map['id']?.toInt() ?? 0,
-      municipalities: List<Municipality>.from(map['municipalities']?.map((x) => Municipality.fromMap(x))),
+      municipalities: List<Municipality>.from(
+          map['municipalities']?.map((x) => Municipality.fromMap(x))),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory District.fromJson(String source) => District.fromMap(json.decode(source));
+  factory District.fromJson(String source) =>
+      District.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -69,6 +72,9 @@ class District {
 
   @override
   int get hashCode {
-    return name.hashCode ^ nepali.hashCode ^ id.hashCode ^ municipalities.hashCode;
+    return name.hashCode ^
+        nepali.hashCode ^
+        id.hashCode ^
+        municipalities.hashCode;
   }
 }
