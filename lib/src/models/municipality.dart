@@ -1,6 +1,8 @@
 import 'dart:convert';
 
-class Municipality {
+import 'package:nepali_address/nepali_address.dart';
+
+class Municipality extends BaseModel {
   final int id;
   final String name;
   final String nepali;
@@ -8,7 +10,7 @@ class Municipality {
     required this.id,
     required this.name,
     required this.nepali,
-  });
+  }) : super('', '');
 
   Map<String, dynamic> toMap() {
     return {
@@ -28,8 +30,7 @@ class Municipality {
 
   String toJson() => json.encode(toMap());
 
-  factory Municipality.fromJson(String source) =>
-      Municipality.fromMap(json.decode(source));
+  factory Municipality.fromJson(String source) => Municipality.fromMap(json.decode(source));
 
   Municipality copyWith({
     int? id,
@@ -50,10 +51,7 @@ class Municipality {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Municipality &&
-        other.id == id &&
-        other.name == name &&
-        other.nepali == nepali;
+    return other is Municipality && other.id == id && other.name == name && other.nepali == nepali;
   }
 
   @override
