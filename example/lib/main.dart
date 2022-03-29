@@ -34,6 +34,9 @@ class _HomePageState extends State<HomePage> {
   TextEditingController wardController = TextEditingController();
   List<String> fullAddress = [];
   bool isAddressSelected = false;
+
+  Address address = addressList;
+
   void checkAddress() {
     if (fullAddress.length > 1 && wardController.text.isNotEmpty) {
       isAddressSelected = true;
