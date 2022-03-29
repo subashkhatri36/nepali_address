@@ -33,7 +33,7 @@ class AddressContainer extends StatefulWidget {
 class _AddressContainerState extends State<AddressContainer> {
   List<District>? _districtList;
   List<Municipality>? _municipalityList;
-  Place? _place;
+  Province? _province;
   District? _district;
   Municipality? _municipality;
 
@@ -42,18 +42,19 @@ class _AddressContainerState extends State<AddressContainer> {
     super.initState();
   }
 
-  void selectPlace(Place? place) {
+  void selectPlace(Province? place) {
     if (place == null) {
       return;
     }
-    _place = place;
+    _province = place;
     _districtList = place.district;
     _district = null;
     _municipality = null;
     _municipalityList = null;
     widget.wardController.clear();
-    if (_place != null) {
-      widget.selectProvince(widget.isNepali ? _place!.nepali : _place!.name);
+    if (_province != null) {
+      widget.selectProvince(
+          widget.isNepali ? _province!.nepali : _province!.name);
     }
     setState(() {});
   }
@@ -65,7 +66,8 @@ class _AddressContainerState extends State<AddressContainer> {
     _district = district;
     _municipalityList = district.municipalities;
     _municipality = null;
-    widget.selectDistrict(widget.isNepali ? _district!.nepali : _district!.name);
+    widget
+        .selectDistrict(widget.isNepali ? _district!.nepali : _district!.name);
     setState(() {});
   }
 
@@ -74,7 +76,8 @@ class _AddressContainerState extends State<AddressContainer> {
       return;
     }
     _municipality = municipality;
-    widget.selectMunicipality(widget.isNepali ? _municipality!.nepali : _municipality!.name);
+    widget.selectMunicipality(
+        widget.isNepali ? _municipality!.nepali : _municipality!.name);
     setState(() {});
   }
 
@@ -91,10 +94,10 @@ class _AddressContainerState extends State<AddressContainer> {
             AddressTitle(
               isNepali: widget.isNepali,
             ),
-            AddressWidget<Place>(
+            AddressWidget<Province>(
               isNepali: widget.isNepali,
-              list: addressList.place,
-              value: _place,
+              list: addressList.province,
+              value: _province,
               hint: widget.isNepali ? 'प्रदेश' : 'Province',
               onChanged: selectPlace,
               isRoundedBorder: widget.isRoundedBorder,
@@ -128,7 +131,8 @@ class _AddressContainerState extends State<AddressContainer> {
               ),
             if (_municipality != null)
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 5.0, vertical: 5),
                 child: TextFormField(
                   controller: widget.wardController,
                   keyboardType: TextInputType.number,
@@ -136,12 +140,18 @@ class _AddressContainerState extends State<AddressContainer> {
                   decoration: InputDecoration(
                       labelText: widget.isNepali ? 'वार्ड नं' : 'Ward No',
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: widget.borderColor),
-                        borderRadius: widget.isRoundedBorder ? BorderRadius.circular(widget.radius) : BorderRadius.zero,
+                        borderSide:
+                            BorderSide(width: 1, color: widget.borderColor),
+                        borderRadius: widget.isRoundedBorder
+                            ? BorderRadius.circular(widget.radius)
+                            : BorderRadius.zero,
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: widget.borderColor),
-                        borderRadius: widget.isRoundedBorder ? BorderRadius.circular(widget.radius) : BorderRadius.zero,
+                        borderSide:
+                            BorderSide(width: 1, color: widget.borderColor),
+                        borderRadius: widget.isRoundedBorder
+                            ? BorderRadius.circular(widget.radius)
+                            : BorderRadius.zero,
                       )),
                 ),
               ),

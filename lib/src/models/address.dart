@@ -5,40 +5,42 @@ import 'package:nepali_address/nepali_address.dart';
 class Address extends BaseModel {
   @override
   final String name;
-  final List<Place> place;
+  final List<Province> province;
   Address({
     required this.name,
-    required this.place,
+    required this.province,
   }) : super('', '');
 
   Map<String, dynamic> toMap() {
     return {
       'name': name,
-      'place': place.map((x) => x.toMap()).toList(),
+      'province ': province.map((x) => x.toMap()).toList(),
     };
   }
 
   factory Address.fromMap(Map<String, dynamic> map) {
     return Address(
       name: map['name'] ?? '',
-      place: List<Place>.from(map['place']?.map((x) => Place.fromMap(x))),
+      province: List<Province>.from(
+          map['province ']?.map((x) => Province.fromMap(x))),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Address.fromJson(String source) => Address.fromMap(json.decode(source));
+  factory Address.fromJson(String source) =>
+      Address.fromMap(json.decode(source));
 
   Address copyWith({
     String? name,
-    List<Place>? place,
+    List<Province>? province,
   }) {
     return Address(
       name: name ?? this.name,
-      place: place ?? this.place,
+      province: province ?? this.province,
     );
   }
 
   @override
-  String toString() => 'Address(name: $name, place: $place)';
+  String toString() => 'Address(name: $name, province : $province )';
 }

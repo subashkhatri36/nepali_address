@@ -60,11 +60,15 @@ class _HomePageState extends State<HomePage> {
                 fullAddress.add('\n Municipality ' + municipality);
               },
               wardController: wardController,
-              isNepali: true,
+              isNepali: false,
             ),
-            ElevatedButton(onPressed: () => checkAddress(), child: const Text('Show Address')),
+            ElevatedButton(
+                onPressed: () => checkAddress(),
+                child: const Text('Show Address')),
             if (isAddressSelected)
-              for (int i = 0; i < fullAddress.length; i++) ...[Text(fullAddress[i] + '\n')]
+              for (int i = 0; i < fullAddress.length; i++) ...[
+                Text(fullAddress[i] + '\n')
+              ]
             else
               const Text('No Address Selected'),
             Text('Ward :' + wardController.text),

@@ -2,8 +2,8 @@ import 'package:nepali_address/nepali_address.dart';
 
 Address addressList = Address(
   name: "Nepal",
-  place: [
-    Place(
+  province: [
+    Province(
       name: "Pradesh 1",
       nepali: "प्रदेश १",
       id: 1,
@@ -731,7 +731,7 @@ Address addressList = Address(
         ),
       ],
     ),
-    Place(
+    Province(
       name: "Madhesh Pradesh",
       nepali: "मधेश प्रदेश",
       id: 2,
@@ -1474,7 +1474,7 @@ Address addressList = Address(
         ),
       ],
     ),
-    Place(
+    Province(
       name: "Bagmati Pradesh",
       nepali: "बागमती प्रदेश",
       id: 3,
@@ -2167,7 +2167,7 @@ Address addressList = Address(
         ),
       ],
     ),
-    Place(
+    Province(
       name: "Gandaki Pradesh",
       nepali: "गण्डकी प्रदेश",
       id: 4,
@@ -2671,7 +2671,7 @@ Address addressList = Address(
         ),
       ],
     ),
-    Place(
+    Province(
       name: "Pradesh 5",
       nepali: "प्रान्त नम्बर ५",
       id: 5,
@@ -3307,7 +3307,7 @@ Address addressList = Address(
         ),
       ],
     ),
-    Place(
+    Province(
       name: "Karnali Pradesh",
       nepali: "कर्णाली प्रदेश",
       id: 6,
@@ -3779,7 +3779,7 @@ Address addressList = Address(
         ),
       ],
     ),
-    Place(
+    Province(
       name: "Sudurpashchim Pradesh",
       nepali: "सुदूरपश्चिम प्रदेश",
       id: 7,

@@ -3,25 +3,25 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:nepali_address/nepali_address.dart';
 
-class Place extends BaseModel {
+class Province extends BaseModel {
   final String name;
   final String nepali;
   final int id;
   final List<District> district;
-  Place({
+  Province({
     required this.name,
     required this.nepali,
     required this.id,
     required this.district,
   }) : super('', '');
 
-  Place copyWith({
+  Province copyWith({
     String? name,
     String? nepali,
     int? id,
     List<District>? district,
   }) {
-    return Place(
+    return Province(
       name: name ?? this.name,
       nepali: nepali ?? this.nepali,
       id: id ?? this.id,
@@ -38,29 +38,35 @@ class Place extends BaseModel {
     };
   }
 
-  factory Place.fromMap(Map<String, dynamic> map) {
-    return Place(
+  factory Province.fromMap(Map<String, dynamic> map) {
+    return Province(
       name: map['name'] ?? '',
       nepali: map['nepali'] ?? '',
       id: map['id']?.toInt() ?? 0,
-      district: List<District>.from(map['district']?.map((x) => District.fromMap(x))),
+      district:
+          List<District>.from(map['district']?.map((x) => District.fromMap(x))),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Place.fromJson(String source) => Place.fromMap(json.decode(source));
+  factory Province.fromJson(String source) =>
+      Province.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'Place(name: $name, nepali: $nepali, id: $id, district: $district)';
+    return 'Province (name: $name, nepali: $nepali, id: $id, district: $district)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Place && other.name == name && other.nepali == nepali && other.id == id && listEquals(other.district, district);
+    return other is Province &&
+        other.name == name &&
+        other.nepali == nepali &&
+        other.id == id &&
+        listEquals(other.district, district);
   }
 
   @override
