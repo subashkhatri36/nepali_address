@@ -2140,7 +2140,7 @@ Address addressList = Address(
             ),
             Municipality(
               name: "Khairahani",
-              nepali: "खैरहानी",
+              nepali: "खैरहनी",
               id: 3,
             ),
             Municipality(
@@ -2155,7 +2155,7 @@ Address addressList = Address(
             ),
             Municipality(
               name: "Rapti",
-              nepali: "र्याप",
+              nepali: "राप्ती",
               id: 6,
             ),
             Municipality(
@@ -2308,12 +2308,12 @@ Address addressList = Address(
             ),
             Municipality(
               name: "Anbu Khaireni",
-              nepali: "अन्बु खैरेनी",
+              nepali: "आँबुखैरेनी",
               id: 5,
             ),
             Municipality(
               name: "Rhishing",
-              nepali: "रिशिङ",
+              nepali: "ऋषिङ्ग",
               id: 6,
             ),
             Municipality(
@@ -2508,7 +2508,7 @@ Address addressList = Address(
             ),
             Municipality(
               name: "Dhaulagiri",
-              nepali: "धौलागिरी",
+              nepali: "धवलागिरी",
               id: 3,
             ),
             Municipality(
@@ -2523,7 +2523,7 @@ Address addressList = Address(
             ),
             Municipality(
               name: "Raghugang",
-              nepali: "रघुगाङ",
+              nepali: "रघुगंगा",
               id: 6,
             ),
           ],
