@@ -2508,7 +2508,7 @@ Address addressList = Address(
             ),
             Municipality(
               name: "Dhaulagiri",
-              nepali: "धौलागिरी",
+              nepali: "धवलागिरी",
               id: 3,
             ),
             Municipality(
@@ -2523,7 +2523,7 @@ Address addressList = Address(
             ),
             Municipality(
               name: "Raghugang",
-              nepali: "रघुगाङ",
+              nepali: "रघुगंगा",
               id: 6,
             ),
           ],
