@@ -4,8 +4,8 @@ Address addressList = Address(
   name: "Nepal",
   province: [
     Province(
-      name: "Pradesh 1",
-      nepali: "प्रदेश १",
+      name: "Koshi Pradesh",
+      nepali: "कोशी प्रदेश",
       id: 1,
       district: [
         District(
@@ -2672,8 +2672,8 @@ Address addressList = Address(
       ],
     ),
     Province(
-      name: "Pradesh 5",
-      nepali: "प्रान्त नम्बर ५",
+      name: "Lumbini Pradesh",
+      nepali: "लुम्बिनी प्रदेश",
       id: 5,
       district: [
         District(
